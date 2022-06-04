@@ -1,0 +1,73 @@
+/* include all of our elements in order to regulate font size,style and border size */
+
+*, * ::before, *::after{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+/* in order to remove padding and margins you set them to 0 so the background fills the entire screen 
+linear gradient allows for there to be a gradiant from left to right of two colors*/
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, pink, green);
+
+}
+
+/* all of my buttons, operators and displays are within this div
+i want the content to align and justify center
+110vh means its going to fill 100% of the height at a constant
+*/
+.roboCalc-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    /* */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.roboCalc-grid > button {
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: 400;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgb(221, 227, 225);
+}
+
+.roboCalc-grid > button:hover {
+    background-color: rgb(228, 38, 54);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    /*this makes the it fill the entire width of our top row
+    like in the css game where we watered plants in the grid rows, this allows from the first to the last row of space to be taken up by the display */
+    background-color: rgba(0, 0, 0, .75);
+    /*the .75 allows for the opacity to become transparent*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    /*if a number is too long word wrap allows it to continue onto another line
+    and word break will cut the number in the middle*/
+
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: x-large;
+}
+.output .current-operand {
+    color: blueviolet;
+    font-size: xx-large;
+}
