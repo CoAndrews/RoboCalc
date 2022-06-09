@@ -53,9 +53,16 @@ class Calculator {
     compute(){
         let computation
         const prev = parseFloat(this.previousOperand)
+        //will take the string and turn it into a number
         const current = parseFloat(this.currentOperand)
+        //if we dont have a previous value or 
+        //current value we just want to return
+        //we dont want the calculator to run if we press a button
+        //with a non working equation
         if(isNaN(prev) || isNaN(current)) return
-        //my switch statment allows me to creat multiple switch staments on .operation when it equals a + or / or *
+        //my switch statment allows me to creat multiple 
+        //switch staments on .operation when it equals 
+        //a + or / or *
         switch (this.operation) {
             case '+' :
                 computation = prev + current
@@ -72,6 +79,8 @@ class Calculator {
             default: 
             return
         }
+        //this allows us to perform calculations but doesn't allow us to clear
+        //or delete
         this.currentOperand = computation
         this.operation = undefined
         this.previousOperand = ''
@@ -80,7 +89,8 @@ class Calculator {
 
     getDisplayNumber(number) {
         const stringNumber = number.toString()
-        //this will take the string and turn it into an array
+        //this will take the string and turn 
+        //it into an array
         const integerDigits = parseFloat(stringNumber.split('.')[0])
         const decimalDigits = stringNumber.split('.')[1]
         let integerDisplay
@@ -146,16 +156,21 @@ operationButtons.forEach(button => {
         calculator.updateDisplay()
     })
 })
+
+//this is going to call the compute function in order display
+//our total value
 equalsButton.addEventListener('click', button => {
     calculator.compute()
     calculator.updateDisplay()
   })
 
+  //this will call our clear function aka AC
 clearButton.addEventListener('click', button => {
     calculator.clear()
     calculator.updateDisplay()
 })
 
+//this will call our delete button
 deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.updateDisplay()
