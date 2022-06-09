@@ -112,12 +112,12 @@ class Calculator {
 
 
     
-
-
+//in order to select data attributes I have to call it in a ('[]')
+//query selector all is for multiple buttons
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operand]');
-//for individually classed buttons i only used .querySelector, for data classed buttons that arent segregated i use .query selector
 
+//for individually classed buttons i only used .querySelector, for data classed buttons that arent segregated i use .query selector
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const clearButton = document.querySelector('[data-clear]')

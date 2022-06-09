@@ -1,4 +1,4 @@
-/* include all of our elements in order to regulate font size,style and border size */
+/* include all of the elements in order to regulate font size,style and border size */
 
 *, * ::before, *::after{
     box-sizing: border-box;
@@ -24,21 +24,24 @@ i want the content to align and justify center
     align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
-    /* */
+    
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
-
+/*this selects all my buttons 
+in the grid*/
 .roboCalc-grid > button {
     cursor: pointer;
     font-size: x-large;
     font-weight: 400;
     border: 1px solid white;
     outline: none;
+    /* browsers put this in default
+    i selected for no outline */
     background-color: rgb(221, 227, 225);
 }
 
 .roboCalc-grid > button:hover {
-    background-color: rgb(228, 38, 54);
+    background-color: rgb(235, 130, 205);
 }
 
 .span-two {
@@ -62,7 +65,10 @@ i want the content to align and justify center
     and word break will cut the number in the middle*/
 
 }
-
+/*these two are what 
+numbers are going to be displayed
+so i had to style inside of the display box
+as well!*/
 .output .previous-operand {
     color: rgba(255, 255, 255, .75);
     font-size: x-large;
